@@ -45,12 +45,3 @@ $user1->activate();
 echo '<pre>';
 print_r($user1);
 echo '</pre>';
-
-//echo $user1->status;
-
-
-/* $user2 = new User(1, 'manager', 0, 'Dima', 1709463247);
-
-echo '<pre>';
-print_r($user1);
-echo '</pre>'; */
