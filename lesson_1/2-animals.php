@@ -39,7 +39,6 @@
         
     }
 
-
     class Mouse extends Animal{
         private $hiddenLevel;
         public function __construct(string $name, int $health, int $power){
@@ -81,9 +80,7 @@
     $barsik = new Cat('barsik', 100, 10);
     $bobik = new Dog('bobik', 100, 10);
     $jerry = new Mouse('Jerry', 10, 2);
-    /* $barsik = new Cat('barsik', 100, 10);
-    
-      */
+    /* $barsik = new Cat('barsik', 100, 10);*/
 
     $core->addUnit($barsik);
     $core->addUnit($bobik);
