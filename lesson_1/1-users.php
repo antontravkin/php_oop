@@ -46,5 +46,3 @@ $user1->activate();
 echo '<pre>';
 print_r($user1);
 echo '</pre>';
-
-phpinfo();
