@@ -51,14 +51,14 @@
         }
 
         public function applyDamage(int $damage){
-            if (mt_rand(1,100)/ 100 > $this->hiddenLevel) {
+            if (mt_rand(1, 100)/ 100 > $this->hiddenLevel) {
                 parent::applyDamage($damage);
             }
         }
     }
 
     class GameCore{
-        private $unit; //
+        private $units; //
 
         public function __construct(){
             $this->units = [];
@@ -82,6 +82,8 @@
     $jerry = new Mouse('Jerry', 100, 50);
     /* $barsik = new Cat('barsik', 100, 10);*/
 
+    $jerry->applyDamage(2);
+
     $core->addUnit($barsik);
     $core->addUnit($bobik);
     $core->addUnit($jerry);
@@ -91,5 +93,4 @@
     echo '<pre>';
     print_r( $barsik );
     echo '<pre>';  */
-
 ?>
