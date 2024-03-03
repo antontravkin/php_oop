@@ -44,7 +44,17 @@
         private $hiddenLevel;
         public function __construct(string $name, int $health, int $power){
             parent::__construct($name, $health, $power);
-            $this->hiddenLevel = 0.4;
+            $this->hiddenLevel = 0;
+        }
+
+        public function setHiddenLevel(float $lavel){
+            $this->hiddenLevel = $lavel;
+        }
+
+        public function applyDamage(int $damage){
+            if (mt_rand(1,100)/ 100 > $this->hiddenLevel) {
+                parent::applyDamage($damage);
+            }
         }
     }
 
