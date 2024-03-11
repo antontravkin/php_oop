@@ -71,16 +71,25 @@
         public function nextTick(){
             foreach ($this->units as $unit){ 
                 $damage = $unit->calcDamage();
-                var_dump($damage);
+                $target = $this->getRandom($unit);
+               //->applyDamage($damage);
+                echo "{$unit->name} beat {$target->name}, damage->$damage" . '<hr>';
             }
+        }
+        private function getRandom(Animal $exclude){
+            $units = array_values(array_filter($this->units, function($unit) use ($exclude){
+                return $unit !== $exclude;
+            }));
+            return $units[mt_rand(0, count($units) - 1)];
         }
     }
 
     $core = new GameCore();
+
     $barsik = new Cat('barsik', 100, 10);
     $bobik = new Dog('bobik', 100, 10);
-    $jerry = new Mouse('Jerry', 100, 30);
-    /* $barsik = new Cat('barsik', 100, 10);*/
+    $jerry = new Mouse('Jerry', 100, 10);
+
 
     $jerry->applyDamage(2);
 
