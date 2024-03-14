@@ -24,7 +24,9 @@ let select = function () {
             console.log()
 
             if (item.value == this.getAttribute('data-test')) {
-                item.setAttribute('selected', true)
+                item.setAttribute('selected', 'selected')
+            } else {
+                item.removeAttribute('selected', 'selected')
             }
         })
     }
